@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <?php include("partials/head.php"); ?>
-        <title>Dashboard - BeRice</title>
     </head>
     <body class="sb-nav-fixed">
         <?php include("partials/topbar.php"); ?>
