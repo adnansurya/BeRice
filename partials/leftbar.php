@@ -20,7 +20,11 @@
                     </a> 
                     <a class="nav-link" href="#">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Lihat Daftar
+                        Daftar Keluarga
+                    </a>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Daftar Penerima
                     </a>
                     </nav>
                 </div>     

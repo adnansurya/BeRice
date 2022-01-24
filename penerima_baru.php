@@ -11,7 +11,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="my-3">Penerima Baru</h1>                       
+                        <h1 class="my-4">Penerima Baru</h1>                       
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-grid gap-2" data-bs-toggle="modal" data-bs-target="#kkModal">
