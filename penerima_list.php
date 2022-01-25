@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <?php include("partials/head.php"); ?>
-            
-        <link rel="stylesheet" href="css/datatable/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.1/css/fixedHeader.bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css">
     </head>
     <body class="sb-nav-fixed">
         <?php include("partials/topbar.php"); ?>
@@ -54,14 +56,19 @@
             </div>
         </div>
         <?php include("partials/scripts.php"); ?>
-        <script src="js/datatable/datatables.min.js"></script>
-        <script src="js/datatable/dataTables.bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/fixedheader/3.2.1/js/dataTables.fixedHeader.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap.min.js"></script>
         <script src="js/datatable/dataTables.buttons.min.js"></script>
         <script src="js/datatable/buttons.bootstrap.min.js"></script>
         <script type="text/javascript">
                 $(document).ready(function() {
                 $('#bootstrap-data-table').DataTable({
                     "order": [[ 0, "desc" ]],
+                    responsive : true
                     // "columnDefs" : [
                     //     {
                     //         "targets" : [0],

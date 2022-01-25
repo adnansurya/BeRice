@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-grid gap-2" data-bs-toggle="modal" data-bs-target="#kkModal">
-                                    <button class="btn btn-success btn-lg my-3">Tambah KK <br></button>
+                                    <button class="btn btn-success btn-lg my-3">Tambah KK</button>
                                 </div>
                             </div>
                             <div class="col-md-6">
