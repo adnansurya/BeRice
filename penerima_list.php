@@ -1,3 +1,18 @@
+<?php  
+    session_start();
+    if(!isset($_SESSION['login_user'])){
+        header("location:index.php");
+        die();        
+    }else{
+     
+        $user_check = $_SESSION['login_user'];
+        $user_role = $_SESSION['login_role'];
+        if($user_role != 'petugas'){
+            header("location:index.php");
+            die();
+        }
+    }   
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

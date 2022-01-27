@@ -6,11 +6,8 @@
     }else{
      
         $user_check = $_SESSION['login_user'];
-        $user_role = $_SESSION['login_role'];
-        if($user_role != 'petugas'){
-            header("location:index.php");
-            die();
-        }
+        $user_role = $_SESSION['login_role'];   
+        $user_nik = $_SESSION['login_nik'];           
     }   
 ?>
 <!DOCTYPE html>
@@ -31,10 +28,10 @@
                     <div class="container-fluid px-4">
                         <div class="row">
                             <div class="col-md-6">                                
-                                <h1 class="my-4">Daftar User</h1>                                  
+                                <h1 class="my-4">Zakat</h1>                                  
                             </div>
                             <div class="col-md-6">                               
-                                <button class="btn btn-success btn-sm my-4 float-end start-100 top-50" data-bs-toggle="modal" data-bs-target="#userModal">Tambah Penerima</button>                                
+                                 <a class="btn btn-success btn-sm my-4 float-end start-100 top-50" href="form/add_zakat.php?nik=<?php echo $user_nik; ?>">Beri Zakat</a>
                             </div>
                         </div>
                         <div class="row">
@@ -42,38 +39,26 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>NIK</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tempat, Tanggal lahir</th>
-                                            <th>Alamat</th>
-                                            <th>Pekerjaan</th>                                           
-                                            <th>Email</th>
-                                            <th>No. HP</th>
-                                            <th>Role</th>
-                                            <th>Password</th>                                 
+                                            <th>No</th>                                                                                
+                                            <th>Token</th>
+                                            <th>Waktu</th>
+                                            <th>Status</th>
+                                            <th>Jumlah</th>                                                                                                              
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
                                         // $role = $_SESSION['login_role'];
                                         include 'global/db_access.php';                                         
-                                        $load = mysqli_query($conn, "SELECT * FROM user ORDER BY user_id ASC"); 
+                                        $load = mysqli_query($conn, "SELECT * FROM log_masuk WHERE nik='".$user_nik."' ORDER BY masuk_id ASC"); 
                                         // if($load){
                                             while ($row = mysqli_fetch_array($load)){
                                                 echo '<tr>';
-                                                    echo '<td>'.$row['user_id'].'</td>';
-                                                    echo '<td>'.$row['nama'].'</td>';
-                                                    echo '<td>'.$row['nik'].'</td>';
-                                                    echo '<td>'.$row['jenis_kelamin'].'</td>';
-                                                    echo '<td>'.$row['t4_lahir'].','.$row['tgl_lahir'].'</td>';                                                    
-                                                    echo '<td>'.$row['alamat'].'</td>';
-                                                    echo '<td>'.$row['pekerjaan'].'</td>';                                                  
-                                                    echo '<td>'.$row['email'].'</td>';
-                                                    echo '<td>'.$row['no_hp'].'</td>';
-                                                    echo '<td>'.$row['role'].'</td>';
-                                                    echo '<td>'.$row['pass'].'</td>';                                    
+                                                    echo '<td>'.$row['masuk_id'].'</td>';                                                                                                       
+                                                    echo '<td>'.$row['token'].'</td>';                                                    
+                                                    echo '<td>'.$row['waktu'].'</td>';
+                                                    echo '<td>'.$row['status'].'</td>';                                                  
+                                                    echo '<td>'.$row['jumlah'].'</td>';                                                                                     
                                                 echo '</tr>';                                
                                             }   
                                         // }                                  
