@@ -1,69 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php include("partials/head.php"); ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.1/css/fixedHeader.bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Login - BeRice</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="sb-nav-fixed">
-        <?php include("partials/topbar.php"); ?>
-        <div id="layoutSidenav">
-            <?php include("partials/leftbar.php"); ?>
-            <div id="layoutSidenav_content">
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <div class="row">
-                            <div class="col-md-6">                                
-                                <h1 class="my-4">Daftar User</h1>                                  
-                            </div>
-                            <div class="col-md-6">                               
-                                <button class="btn btn-success btn-sm my-4 float-end start-100 top-50" data-bs-toggle="modal" data-bs-target="#userModal">Tambah Penerima</button>                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">                                                 
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>NIK</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tempat, Tanggal lahir</th>
-                                            <th>Alamat</th>
-                                            <th>Pekerjaan</th>                                           
-                                            <th>Email</th>
-                                            <th>No. HP</th>
-                                            <th>Password</th>                                 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
-                                        // $role = $_SESSION['login_role'];
-                                        include 'global/db_access.php';                                         
-                                        $load = mysqli_query($conn, "SELECT * FROM user ORDER BY user_id ASC"); 
-                                        // if($load){
-                                            while ($row = mysqli_fetch_array($load)){
-                                                echo '<tr>';
-                                                    echo '<td>'.$row['user_id'].'</td>';
-                                                    echo '<td>'.$row['nama'].'</td>';
-                                                    echo '<td>'.$row['nik'].'</td>';
-                                                    echo '<td>'.$row['jenis_kelamin'].'</td>';
-                                                    echo '<td>'.$row['t4_lahir'].','.$row['tgl_lahir'].'</td>';                                                    
-                                                    echo '<td>'.$row['alamat'].'</td>';
-                                                    echo '<td>'.$row['pekerjaan'].'</td>';                                                  
-                                                    echo '<td>'.$row['email'].'</td>';
-                                                    echo '<td>'.$row['no_hp'].'</td>';
-                                                    echo '<td>'.$row['pass'].'</td>';                                    
-                                                echo '</tr>';                                
-                                            }   
-                                        // }                                  
-                                        
-                                    ?>
-                                    </tbody>
-                                </table> 
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">BeRice</h3></div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="nama" />
+                                                <label for="inputEmail">Email / No. HP</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="pass" />
+                                                <label for="inputPassword">Password</label>
+                                            </div>                                            
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">                                                
+                                                <a class="btn btn-primary" href="index.html">Login</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"  data-bs-toggle="modal" data-bs-target="#userModal"><a href="#"> Daftar akun user baru!</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -142,31 +116,23 @@
                         </div>
                     </div>
                 </main>
-                <?php include('partials/footer.php'); ?>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
-        <?php include("partials/scripts.php"); ?>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
-        <script src="https://cdn.datatables.net/fixedheader/3.2.1/js/dataTables.fixedHeader.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap.min.js"></script>
-        <script src="js/datatable/dataTables.buttons.min.js"></script>
-        <script src="js/datatable/buttons.bootstrap.min.js"></script>
-        <script type="text/javascript">
-                $(document).ready(function() {
-                $('#bootstrap-data-table').DataTable({
-                    "order": [[ 0, "desc" ]],
-                    responsive : true
-                    // "columnDefs" : [
-                    //     {
-                    //         "targets" : [0],
-                    //         "visible" : false
-                    //     }
-                    // ]
-                });
-            } );
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>

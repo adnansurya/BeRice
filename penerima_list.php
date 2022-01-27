@@ -23,10 +23,10 @@
                                     <th>NIK</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Tempat, Tanggal lahir</th>
-                                    <th>Pekerjaan</th>
-                                    <th>Pendidikan</th>
+                                    <th>Pekerjaan</th>                                   
                                     <th>No. HP</th>
-                                    <th>Card ID</th>                                 
+                                    <th>Card ID</th>   
+                                    <th>Action</th>                              
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,10 +41,14 @@
                                     echo '<td>'.$row['nik'].'</td>';
                                     echo '<td>'.$row['jenis_kelamin'].'</td>';
                                     echo '<td>'.$row['t4_lahir'].','.$row['tgl_lahir'].'</td>';                                                    
-                                    echo '<td>'.$row['pekerjaan'].'</td>';
-                                    echo '<td>'.$row['pendidikan'].'</td>';
+                                    echo '<td>'.$row['pekerjaan'].'</td>';                                   
                                     echo '<td>'.$row['no_hp'].'</td>';
-                                    echo '<td>'.$row['card_id'].'</td>';                                    
+                                    echo '<td>'.$row['card_id'].'</td>';     
+                                    echo '<td>
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Edit
+                                        </button>
+                                    </td>';                               
                                 echo '</tr>';                                
                                 }   
                             ?>

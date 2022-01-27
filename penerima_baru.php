@@ -132,11 +132,7 @@
                         <div class="mb-3">
                             <label for="pekerjaanTxt" class="form-label">Pekerjaan</label>
                             <input type="text" class="form-control" id="pekerjaanTxt" name="pekerjaan">                            
-                        </div>
-                        <div class="mb-3">
-                            <label for="pendidikanTxt" class="form-label">Pendidikan</label>
-                            <input type="text" class="form-control" id="pendidikanTxt" name="pendidikan">                            
-                        </div>                                                                                                                         
+                        </div>                                                                                                                                                 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
