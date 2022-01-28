@@ -127,7 +127,11 @@
                         
                         <div class="mb-3">
                             <label for="jkTxt" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control" id="jkTxt" name="jk">                            
+                            <select class="form-select" aria-label="Jenis Kelamin" name="jk">                                
+                                <option value="Laki-Laki" selected>Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>                                
+                            </select>
+                            <!-- <input type="text" class="form-control" id="jkTxt" name="jk">                             -->
                         </div> 
                         <div class="mb-3">
                             <div class="row">
@@ -137,7 +141,7 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="tglLahirxt" class="form-label">Tanggal Lahir</label>
-                                    <input type="text" class="form-control" id="tglLahirTxt" name="tglLahir">  
+                                    <input type="date" class="form-control" id="tglLahirTxt" name="tglLahir">  
                                 </div>
                             </div>                                                        
                         </div>

@@ -9,9 +9,9 @@ include '../global/utility.php';
         
 
         $token = generateRandomString();
-         
+        $waktu = $date->format('Y-m-d H:i:s');
         $sql = "INSERT INTO log_masuk (nik, token, waktu, status, jumlah ) 
-        VALUES ('".$_GET['nik']."','".$token."','-','Menunggu','-')";
+        VALUES ('".$_GET['nik']."','".$token."','".$waktu."','Menunggu','-')";
 
        
         if(!mysqli_query($conn, $sql)){

@@ -28,10 +28,16 @@
                     <div class="container-fluid px-4">
                         <div class="row">
                             <div class="col-md-6">                                
-                                <h1 class="my-4">Zakat</h1>                                  
+                                <h1 class="my-4">Zakat Masuk</h1>                                  
                             </div>
-                            <div class="col-md-6">                               
-                                 <a class="btn btn-success btn-sm my-4 float-end start-100 top-50" href="form/add_zakat.php?nik=<?php echo $user_nik; ?>">Beri Zakat</a>
+                            <div class="col-md-6">   
+                                <?php
+                                    include "global/db_access.php";
+                                    $load =  mysqli_query($conn,"SELECT value FROM global_var WHERE nama_var='beras'");
+                                    $row = mysqli_fetch_array($load,MYSQLI_ASSOC);
+                                    $sisa_beras = $row['value'];
+                                ?>
+                                 <a class="btn btn-default btn-lg my-4 float-end start-100 top-50" href="#">Tersedia : <?php echo $sisa_beras; ?> kg</a>
                             </div>
                         </div>
                         <div class="row">
@@ -42,8 +48,7 @@
                                             <th>No</th>                                     
                                             <th>NIK</th>
                                             <th>Token</th>
-                                            <th>Waktu</th>
-                                           
+                                            <th>Waktu</th>                                           
                                             <th>Jumlah</th>    
                                             <th>Status</th>
                                                                                                                                         

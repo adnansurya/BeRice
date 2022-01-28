@@ -14,10 +14,10 @@
     <div class="position-absolute top-50 end-0 translate-middle-y">
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-8">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>  <?php if($user_check){echo $user_check;  }?></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>  <?php if(isset($_SESSION['login_user'])){echo $_SESSION['login_user'];  }?></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">                   
                     <!-- <li><hr class="dropdown-divider" /></li> -->
-                    <?php if($user_check){  ?>
+                    <?php if(isset($_SESSION['login_user'])){  ?>
                         <li><a class="dropdown-item" href="form/logout.php">Logout</a></li>
                     <?php }else { ?>
                     <li><a class="dropdown-item" href="login.php">Login</a></li>

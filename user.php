@@ -34,7 +34,7 @@
                                 <h1 class="my-4">Daftar User</h1>                                  
                             </div>
                             <div class="col-md-6">                               
-                                <button class="btn btn-success btn-sm my-4 float-end start-100 top-50" data-bs-toggle="modal" data-bs-target="#userModal">Tambah Penerima</button>                                
+                                <button class="btn btn-success btn-sm my-4 float-end start-100 top-50" data-bs-toggle="modal" data-bs-target="#userModal">Tambah User</button>                                
                             </div>
                         </div>
                         <div class="row">
@@ -103,7 +103,10 @@
                                     
                                     <div class="mb-3">
                                         <label for="jkTxt" class="form-label">Jenis Kelamin</label>
-                                        <input type="text" class="form-control" id="jkTxt" name="jk">                            
+                                        <select class="form-select" aria-label="Jenis Kelamin" name="jk">                                
+                                            <option value="Laki-Laki" selected>Laki-Laki</option>
+                                            <option value="Perempuan">Perempuan</option>                                
+                                        </select>                            
                                     </div> 
                                     <div class="mb-3">
                                         <div class="row">
@@ -113,7 +116,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <label for="tglLahirxt" class="form-label">Tanggal Lahir</label>
-                                                <input type="text" class="form-control" id="tglLahirTxt" name="tglLahir">  
+                                                <input type="date" class="form-control" id="tglLahirTxt" name="tglLahir">  
                                             </div>
                                         </div>                                                        
                                     </div>
@@ -142,11 +145,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="passTxt" class="form-label">Password</label>
-                                        <input type="text" class="form-control" id="passTxt" name="pass">                            
+                                        <input type="password" class="form-control" id="passTxt" name="pass">                            
                                     </div>  
                                     <div class="mb-3">
                                         <label for="pass2Txt" class="form-label">Ulangi Password</label>
-                                        <input type="text" class="form-control" id="pass2Txt" name="pass2">                            
+                                        <input type="password" class="form-control" id="pass2Txt" name="pass2">                            
                                     </div>                                                                                                                    
                                 </div>
                                 <div class="modal-footer">
