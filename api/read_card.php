@@ -25,6 +25,28 @@ $satuTakar = 0.1;
                 $totalTakar = $jmlOrang * $satuTakar;
                 
                 echo "TAKAR:".$totalTakar;
+
+                $load =  mysqli_query($conn,"SELECT value FROM global_var WHERE nama_var='beras'");
+                $row = mysqli_fetch_array($load,MYSQLI_ASSOC);
+                $berasNow = (float) $row['value'];
+               
+                $totalBeras = $berasNow - $totalTakar;
+
+                $sql = "UPDATE global_var set value='".$totalBeras."' WHERE nama_var='beras'";
+
+                if(!mysqli_query($conn, $sql)){
+                    // echo "ERROR";
+                    echo("Error stok: " . $conn -> error);
+                }else{
+                    $sql = "INSERT INTO log_keluar (card_id, jumlah, waktu) VALUES ('".$_GET['card']."','".$totalTakar."','".$waktu."')";
+
+        
+                    if(!mysqli_query($conn, $sql)){
+                        echo("Error log: " . $conn -> error);
+                    }
+                }
+                
+                 
     
             }else{
                 echo "ERROR:Data Penerima Tidak Valid.";
